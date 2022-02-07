@@ -9,12 +9,9 @@ import org.junit.Test;
  */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
+	@Test
+    public void getUsers()
     {
-        assertTrue( true );
+    	System.out.println("This is a API test for getUsers Endpoint");
     }
 }
