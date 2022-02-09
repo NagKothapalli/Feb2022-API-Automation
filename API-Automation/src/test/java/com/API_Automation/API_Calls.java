@@ -27,5 +27,52 @@ public class API_Calls
 		boolean result = responseBody.contains("\"total_pages\":4"); //Escape character
 		Assert.assertTrue(result);
 	 }
+	@Test
+	public void createUser()
+	 {
+		RestAssured.baseURI = "https://reqres.in";  
+		RequestSpecification httpRequest = RestAssured.given();
+		httpRequest.body("{\"name\": \"Nag\", \"job\": \"leader\"}");
+		httpRequest.contentType(ContentType.JSON);
+		Response response = httpRequest.request(Method.POST, "/api/users");
+		int code = response.getStatusCode();
+		System.out.println("Status code :"+ code);
+		String responseBody = response.getBody().asString();
+		System.out.println("Response Body is =>  " + responseBody);
+		Assert.assertEquals(201, code);		
+		boolean result = responseBody.contains("Nag"); 
+		Assert.assertTrue(result);
+	 }
+	@Test
+	public void updateUser()
+	 {
+		RestAssured.baseURI = "https://reqres.in";  
+		RequestSpecification httpRequest = RestAssured.given();
+		httpRequest.body("{\"name\": \"Nag\", \"job\": \"Sr Leader\"}");
+		httpRequest.contentType(ContentType.JSON);
+		Response response = httpRequest.request(Method.PUT, "/api/users/2");
+		int code = response.getStatusCode();
+		System.out.println("Status code :"+ code);
+		String responseBody = response.getBody().asString();
+		System.out.println("Response Body is =>  " + responseBody);
+		Assert.assertEquals("Response Code is not correct",200, code);		
+		boolean result = responseBody.contains("Sr Leader"); 
+		Assert.assertTrue(result);
+	 }
+	@Test
+	public void deleteUser()
+	 {
+		RestAssured.baseURI = "https://reqres.in";  
+		RequestSpecification httpRequest = RestAssured.given();
+		//httpRequest.body("{\"name\": \"Nag\", \"job\": \"Sr Leader\"}");
+		//httpRequest.contentType(ContentType.JSON);
+		Response response = httpRequest.request(Method.DELETE, "/api/users/2");
+		int code = response.getStatusCode();
+		System.out.println("Status code :"+ code);
+		String responseBody = response.getBody().asString();
+		System.out.println("Response Body is =>  " + responseBody);
+		Assert.assertEquals("Response Code is not correct",204, code);		
+	 }
+	
 
 }

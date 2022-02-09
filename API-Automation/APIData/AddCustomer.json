@@ -1,0 +1,23 @@
+{
+    "customerId": "200055",
+    "firstName": "Nag",
+    "lastName": "Kothapalli",
+    "addressLine1": "110 Locksunart Way",
+    "addressLine2": "",
+    "city": "Sunnyvale",
+    "state": "CA",
+    "zip": 94087,
+    "countryCode": "US",
+    "phone": "4084901234",
+    "email": "nag024@gmail.com",
+    "status": "Active",
+    "activationDate": "2020-06-10T07:00:00.000Z",
+    "userName" : "tester",
+    "password": "test",
+    "createdBy": "admin",
+    "createdAt": "2020-06-10T07:00:00.000Z",
+    "modifiedBy": "",
+    "modifiedAt": "2020-07-08T18:30:00.000Z",
+    "longitude": -121.9846,
+    "latitude": 37.346241
+}
