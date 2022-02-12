@@ -12,7 +12,7 @@ import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class MealBrite
+public class MealBrite extends ReusableComponents
 {
 	@Test
 	public void addCustomer() throws FileNotFoundException
@@ -28,8 +28,9 @@ public class MealBrite
 		String responseBody = response.getBody().asString();
 		System.out.println("Response Body is =>  " + responseBody);
 		Assert.assertEquals(200, code);		
-		boolean result = responseBody.contains("200055"); 
-		Assert.assertTrue(result);		
+		boolean result = responseBody.contains("200056"); 
+		Assert.assertTrue(result);	
+		validateCustomerStatus("Active");
 	}
 	@Test
 	public void getCustomerProfile() throws FileNotFoundException
@@ -49,7 +50,38 @@ public class MealBrite
 		Assert.assertTrue(result);
 		Assert.assertTrue(responseBody.contains("Nag"));
 		Assert.assertTrue(responseBody.contains("nag024@gmail.com"));
-		Assert.assertTrue(responseBody.contains("\"status\":\"Active\""));
+		Assert.assertTrue("Status of the Customer is not ACTIVE",responseBody.contains("\"status\":\"Active\""));
+		Assert.assertTrue("UserName of the Customer is not Correct",responseBody.contains("\"userName\":\"NagKothapalli\""));
+		Assert.assertTrue("Password of the Customer is not Correct",responseBody.contains("\"password\":\"test123\""));
+	}
+	@Test
+	public void updateCustomer() throws FileNotFoundException
+	{
+		RestAssured.baseURI = "https://dev.mealbrite.com"; //Same for all end points , but different for different servers like Dev, Qa , stage
+		RequestSpecification httpRequest = RestAssured.given();
+		httpRequest.contentType(ContentType.JSON);
+		FileInputStream myfile = new FileInputStream("APIData/UpdateCustomer.json");
+		httpRequest.body(myfile);
+		Response response = httpRequest.request(Method.POST, "/customer/update");//endpoint will be same for all servers/environments
+		Assert.assertEquals(200, response.getStatusCode());
+		System.out.println("Status code :"+ response.getStatusCode());
+		System.out.println("Response Body is =>  " + response.getBody().asString());
+		Assert.assertTrue(response.getBody().asString().contains("200055"));		
+	}
+	@Test
+	public void deleteCustomer() throws FileNotFoundException
+	{
+		RestAssured.baseURI = "https://dev.mealbrite.com"; //Same for all end points , but different for different servers like Dev, Qa , stage
+		RequestSpecification httpRequest = RestAssured.given();
+		httpRequest.contentType(ContentType.JSON);
+		FileInputStream myfile = new FileInputStream("APIData/GetCustomerProfile.json");
+		httpRequest.body(myfile);
+		Response response = httpRequest.request(Method.POST, "/customer/delete");//endpoint will be same for all servers/environments
+		Assert.assertEquals(200, response.getStatusCode());
+		System.out.println("Status code :"+ response.getStatusCode());
+		System.out.println("Response Body is =>  " + response.getBody().asString());
+		Assert.assertTrue("Employee ID is not correct : ",response.getBody().asString().contains("200056"));
+		validateCustomerStatus("Archive");
 	}
 
 }

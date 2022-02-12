@@ -1,5 +1,5 @@
 {
-    "customerId": "200056",
+    "customerId": "200055",
     "firstName": "Nag",
     "lastName": "Kothapalli",
     "addressLine1": "110 Locksunart Way",
@@ -12,8 +12,8 @@
     "email": "nag024@gmail.com",
     "status": "Active",
     "activationDate": "2020-06-10T07:00:00.000Z",
-    "userName" : "tester",
-    "password": "test",
+    "userName" : "NagKothapalli",
+    "password": "test123",
     "createdBy": "admin",
     "createdAt": "2020-06-10T07:00:00.000Z",
     "modifiedBy": "",
