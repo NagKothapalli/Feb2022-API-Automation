@@ -11,11 +11,28 @@ import io.restassured.http.ContentType;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-
+//              child             parent
 public class MealBrite extends ReusableComponents
 {
+	//AddCustomerAndGetCustomerProfile
 	@Test
-	public void addCustomer() throws FileNotFoundException
+	public void addCustomerAndGetCustomerProfile() throws FileNotFoundException
+	{
+		boolean result = addCustomer();
+		if(result)
+		{
+			validateCustomerStatus("Active");  // HashMap - key value : fn : nag , ln : K , status:Active
+		    //validateCustomerStatus("Active");
+		}
+		else
+		{
+			System.out.println("Customer Validation Failed");			
+			System.out.println("This is a part of else case");
+		}		
+			
+	}
+	@Test
+	public void addNewCustomer() throws FileNotFoundException
 	{
 		RestAssured.baseURI = "https://dev.mealbrite.com"; //Same for all end points , but different for different servers like Dev, Qa , stage
 		RequestSpecification httpRequest = RestAssured.given();
