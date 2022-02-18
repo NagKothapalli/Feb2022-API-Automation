@@ -15,7 +15,7 @@ public class ReadJsonData
 	{
 		Gson gson = new Gson();
 		FileReader myfile = new FileReader("APIData/UserData.json");
-	   	BufferedReader br = new BufferedReader(myfile);
+	   	//BufferedReader br = new BufferedReader(myfile);
 	   	UserData myData = gson.fromJson(myfile, UserData.class);
 	   	System.out.println(myData.FirstName);
 	   	System.out.println(myData.LastName);
@@ -26,8 +26,8 @@ public class ReadJsonData
 
 }
 
-class UserData
-{	
+class UserData  //POJO
+{
 	 String FirstName;
 	 String LastName;
 	 String CityName;
