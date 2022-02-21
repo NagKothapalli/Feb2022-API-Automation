@@ -3,6 +3,7 @@ package parseJsonRespone;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Random;
 
 import org.junit.Test;
 
@@ -21,7 +22,10 @@ public class ReadJsonData
 	   	System.out.println(myData.LastName);
 	   	System.out.println(myData.Phone);
 	   	System.out.println(myData.CityName);
-	   	System.out.println(myData.PinCode);		   	
+	   	System.out.println(myData.PinCode);	
+	   	myData.FirstName = myData.FirstName + new Random().nextInt(9999);
+	   	String mystring = gson.toJson(myData);
+	   	System.out.println(mystring);
 	}
 
 }
