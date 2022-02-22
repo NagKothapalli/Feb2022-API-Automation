@@ -1,0 +1,41 @@
+{
+"requestInfo":{
+"correlationId":"661e9d57-e26d-4296-alde-500f35fc914a",
+"transactionId":"0892326d-6648-82c4-36e7a1bc7081",
+"version": "1"
+},
+"clientInfo": {
+"client_context": "Webservice",
+"channel_type": 0,
+"channel_id": "1S",
+"requester": "AEOVER",
+"agency_code": "AA",
+"iata_number": "999999992",
+"pseudo_city_code": "F4X0",
+"agent_city_code": "F4X0",
+"country_code": "US",
+"currency_code": "USD",
+"supplier_type": "AIR",
+"lniata": "43242",
+"lock_id": "9bcbd614-49b6-a915-2f235b69fb69f04c",
+"sell_city": "F4X0",
+"travel_agent_indicator": "Hello",
+"agent_sine_city": "F4X0",
+"agent_sign": "D5F"
+},
+"segment_info":{
+"segment_id": 10,
+"supplier_type": 0,
+"booking_class_code": "C",
+"seatmap_view_type": 0,
+"flight_info": {
+"airline_code": "AA",
+"flight_number": "1234",
+"scheduled_departure_date":"2021-04-29",
+"departure_airport_code": "KWI",
+"arrival_airport_code": "AUH",
+"operational_suffix": "Y"
+}
+},
+"seat_action": 0
+}
