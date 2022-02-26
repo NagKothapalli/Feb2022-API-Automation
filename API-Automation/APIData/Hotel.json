@@ -1,0 +1,84 @@
+{
+	"Resuarent" :"Bawarchi",
+	"Address" : "CrossRoads",
+	"primaryProducts":
+	[
+		{                        
+			"productName": "Special Cake",
+			"productPrice":
+			[
+				{
+					"CakeType":"Mini",
+					"Price": 100
+				},
+				{
+					"CakeType":"Medium",
+					"Price": 200
+				},
+				{
+					"CakeType":"Large",
+					"Price": 400
+				}
+			],
+			"taxPercentage": 9.25,
+			"productCategory": "Dessert",
+			"productType": "Non-Veg"
+		},
+		{                        
+			"productName": "Special Drink",
+			"productPrice":
+			[
+				{
+					"CakeType":"Mini",
+					"Price": 100
+				},
+				{
+					"CakeType":"Medium",
+					"Price": 200
+				},
+				{
+					"CakeType":"Large",
+					"Price": 400
+				}
+			],
+			"taxPercentage": 8.25,
+			"productCategory": "Dessert",
+			"productType": "Veg"
+		},{                        
+			"productName": "Special Rice",
+			"productPrice":
+			[
+				{
+					"CakeType":"Mini",
+					"Price": 100
+				},
+				{
+					"CakeType":"Medium",
+					"Price": 200
+				},
+				{
+					"CakeType":"Large",
+					"Price": 400
+				}
+			],
+			"taxPercentage": 19.25,
+			"productCategory": "Main",
+			"productType": "Veg"
+		}
+	],
+	"secondaryProducts":
+	[
+		{                        
+			"productName": "Chicken",
+			"productPrice": 345
+		},
+		{                        
+			"productName": "Mutton",
+			"productPrice": 435
+		},
+		{                        
+			"productName": "Lamb",
+			"productPrice": 395
+		}
+	]
+ }
